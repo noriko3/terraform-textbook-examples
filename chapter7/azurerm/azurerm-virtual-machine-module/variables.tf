@@ -1,14 +1,14 @@
 variable "rgname" {
   type        = string
-  description = "name of resource group"
+  description = "リソースグループの名称を指定します"
 }
 variable "location" {
   type        = string
-  description = "location name"
+  description = "ロケーションを指定します"
 }
 variable "vnet_name" {
   type        = string
-  description = "vnet name"
+  description = "vnetの名称を指定します"
 }
 variable "address_space" {
   type        = list(string)

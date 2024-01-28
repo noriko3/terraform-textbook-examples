@@ -1,13 +1,13 @@
 variable "vpc_name" {
   type        = string
-  description = "vpc name"
+  description = "vpcの名称を指定します"
 }
 variable "cidr_block" {
   type        = string
-  description = "address space of the vpc"
+  description = "vpcのCIDRブロックを指定します"
   default     = "10.0.0.0/16"
 }
 variable "subnet_name" {
   type        = string
-  description = "subnet name"
+  description = "サブネットの名称を指定します"
 }

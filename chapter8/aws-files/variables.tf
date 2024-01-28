@@ -1,30 +1,25 @@
 variable "vpc_name" {
   type        = string
-  description = "vpc name"
+  description = "vpcの名称"
 }
 variable "cidr_block" {
   type        = string
-  description = "address space of the vpc"
+  description = "vpcのCIDRブロック"
   default     = "10.0.0.0/16"
 }
 variable "subnet_name" {
   type        = string
-  description = "subnet name"
+  description = "サブネットの名称"
 }
 variable "region" {
   type        = string
-  description = "provide region where you want to deploy resources"
+  description = "リソースをデプロイするリージョンを指定します"
 }
 variable "bucket_name" {
   type        = string
-  description = "provide name of the S3 bucket"
-}
-variable "bucket_acl" {
-  type        = string
-  description = "provide ACL for the S3 bucket i.e. private, public-read etc."
+  description = "S3バケットの名称を指定します"
 }
 variable "custom_tags" {
   type        = map(any)
-  description = "provide tags which needs to be applied."
-
+  description = "タグを指定します"
 }
