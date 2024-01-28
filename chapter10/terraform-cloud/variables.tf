@@ -1,8 +1,8 @@
 variable "rgname" {
   type        = string
-  description = "provide name of the resource group"
+  description = "リソースグループの名称を指定します"
 }
 variable "rglocation" {
   type        = string
-  description = "provide name of the resource group location"
+  description = "リソースグループのロケーションの名称を指定します"
 }

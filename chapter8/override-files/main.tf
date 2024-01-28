@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "rgname" {
-  #Create resource group in Azure
+  #リソースグループの作成
   name     = "Terraform-rg"
   location = var.location
   tags = {

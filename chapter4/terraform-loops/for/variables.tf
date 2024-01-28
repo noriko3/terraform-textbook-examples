@@ -1,13 +1,13 @@
-# Defined variable for the list:
+# リストで変数を定義
 variable "cloud" {
-  description = "A list of cloud"
+  description = "クラウドのリスト"
   type        = list(string)
   default     = ["azure", "aws", "gcp"]
 }
 
-# Defined variable for the map:
+# マップで変数を定義
 variable "cloud_map" {
-  description = "map"
+  description = "クラウドのリスト（マップ）"
   type        = map(string)
   default = {
     Azure = "Microsoft"

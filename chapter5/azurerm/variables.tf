@@ -1,71 +1,71 @@
 variable "rgname" {
   type        = string
-  description = "name of resource group"
+  description = "リソースグループの名称を指定します"
 }
 variable "location" {
   type        = string
-  description = "location name"
+  description = "ロケーションの名称を指定します"
 }
 variable "vnet_name" {
   type        = string
-  description = "vnet name"
+  description = "vnetにつける名称を指定します"
 }
 variable "address_space" {
   type        = list(string)
-  description = "address space of the vnet"
+  description = "vnetのCIDRを指定します"
   default     = ["10.1.0.0/16"]
 }
 variable "subnet_name" {
   type        = string
-  description = "subnet name"
+  description = "サブネットの名称を指定します"
 }
 variable "nic_name" {
   type        = string
-  description = "nic card name"
+  description = "NICの名称を指定します"
 }
 variable "vm_name" {
   type        = string
-  description = "virtual machine name"
+  description = "VMの名称を指定します"
 }
 variable "vm_size" {
   type        = string
-  description = "virtual machine size"
+  description = "VMのサイズを指定します"
 }
 variable "admin_username" {
   type        = string
-  description = "username"
+  description = "Adminのユーザ名を指定します。デフォルトはazureuserです"
   default     = "azureuser"
 }
 variable "vm_publisher" {
   type        = string
-  description = "Virtual machine publisher"
+  description = "VMの作成元になるマーケットプレイスのイメージ発行者"
 }
 variable "vm_offer" {
   type        = string
-  description = "Virtual machine offer"
+  description = "VMの作成時に使用されるイメージのオファーを指定します"
 }
 variable "vm_sku" {
   type        = string
-  description = "Virtual machine sku"
+  description = "VMの作成時に使用されるイメージのSKUを指定します"
 }
 variable "vm_version" {
   type        = string
-  description = "Virtual machine os version"
+  description = "VMにインストールするOSのバージョンを指定します。デフォルトはlasestです"
   default     = "latest"
 }
 variable "keyvault_name" {
   type        = string
-  description = "keyvault name"
+  description = "keyvaultの名称を指定します"
 }
 variable "sku_name" {
   type        = string
-  description = "keyvault sku"
+  description = "keyvaultのskuを指定します"
 }
 variable "keyvault_secret_name" {
   type        = string
-  description = "virtual machine secret name"
+  description = "keyvaultのシークレットの名称を指定します。デフォルトはvmpasswordです"
   default     = "vmpassword"
 }
 variable "tags" {
-  description = "provide tags"
+  description = "タグを指定します"
 }
