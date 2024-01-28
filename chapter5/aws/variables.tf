@@ -1,6 +1,6 @@
 variable "cidr_block" {
-  description = "provide VPC range"
+  description = "VPCのCIDRブロックを指定します"
 }
 variable "aws_region" {
-  description = "provide AWS region"
+  description = "AWSのリージョンを指定します"
 }
