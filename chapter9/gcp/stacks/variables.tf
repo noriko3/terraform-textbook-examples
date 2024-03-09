@@ -1,58 +1,63 @@
 variable "zone" {
   type        = string
-  description = "provide zone"
+  description = "ゾーンを指定します"
 }
 variable "region" {
   type        = string
-  description = "provide GCP region"
+  description = "リージョンを指定します"
 }
 variable "project_name" {
   type        = string
-  description = "provide project name"
+  description = "プロジェクト名を指定します"
 }
 variable "labels" {
   type        = map(any)
-  description = "provide name of the labels"
+  description = "ラベルを指定します"
 }
 /******************************************
 	VPC variables
  *****************************************/
 
 variable "project_id" {
-  description = "The ID of the project where this VPC will be created"
+  type        = string
+  description = "このVPCを作成するプロジェクトのIDを指定します"
 }
 
 variable "vpc_name" {
-  description = "The name of the network being created"
+  type        = string
+  description = "作成しようとしているネットワークの名称を指定します"
 }
 
 variable "vpc_routing_mode" {
   type        = string
   default     = "GLOBAL"
-  description = "The network routing mode (default 'GLOBAL')"
+  description = "ネットワークのルーティングのモード(デフォルトは'GLOBAL')"
 }
 
 variable "vpc_description" {
   type        = string
-  description = "An optional description of this resource. The resource must be recreated to modify this field."
+  description = "VPCの説明。この値を変更するには、リソースを再作成する必要があります。"
   default     = ""
 }
 
 variable "auto_create_subnetworks" {
   type        = bool
-  description = "When set to true, the network is created in 'auto subnet mode' and it will create a subnet for each region automatically across the 10.128.0.0/9 address range. When set to false, the network is created in 'custom subnet mode' so the user can explicitly connect subnetwork resources."
+  description = <<EOF
+  "trueに設定すると、ネットワークは'auto subnet mode'で作成され、10.128.0.0/9のアドレス範囲に渡って各リージョンのサブネットを自動的に作成します。
+  falseに設定すると、ネットワークは'カスタムサブネットモード'で作成され、ユーザーは明示的にサブネットワークのリソースを関連付けることができます。"
+  EOF
   default     = false
 }
 
 variable "delete_default_routes_on_create" {
   type        = bool
-  description = "If set, ensure that all routes within the network specified whose names begin with 'default-route' and with a next hop of 'default-internet-gateway' are deleted"
+  description = "設定されている場合、指定されたネットワーク内で、名前が「default-route」で始まり、ネクストホップが「default-internet-gateway」であるすべてのルートが確実に削除されます。"
   default     = false
 }
 
 variable "vpc_mtu" {
   type        = number
-  description = "The network MTU. Must be a value between 1460 and 1500 inclusive. If set to 0 (meaning MTU is unset), the network will default to 1460 automatically."
+  description = "ネットワークのMTU。1460 から 1500 の間の値でなければなりません。0（MTUが未設定であることを意味します）に設定すると、ネットワークは自動的に1460にデフォルト設定されます。"
   default     = 0
 }
 
@@ -61,16 +66,16 @@ variable "vpc_mtu" {
  *****************************************/
 variable "subnets" {
   type        = list(map(string))
-  description = "The list of subnets being created"
+  description = "作成するサブネットをリストで指定します"
 }
 
 variable "secondary_ranges" {
   type        = map(list(object({ range_name = string, ip_cidr_range = string })))
-  description = "Secondary ranges that will be used in some of the subnets"
+  description = "セカンダリIPの範囲を指定します"
   default     = {}
 }
 variable "routes" {
-  description = "defined routes"
+  description = "VPCに設定するルーティングをリストで指定します"
   type = list(object({
     name              = string
     description       = string
@@ -85,18 +90,18 @@ variable "routes" {
  *****************************************/
 variable "stg_name" {
   type        = string
-  description = "name of the GCP storage"
+  description = "バケットの名称を指定します"
 }
 variable "location" {
   type        = string
-  description = "name of the location"
+  description = "ロケーションの名称を指定します"
 }
 variable "force_destroy" {
   type        = bool
-  description = "provide whether true or false"
+  description = "強制削除をするかしないかをbool値で指定します。デフォルトは `true` です"
   default     = true
 }
 variable "storage_class" {
   type        = string
-  description = "Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE"
+  description = "ストレージクラスを以下の値から指定します: STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE"
 }

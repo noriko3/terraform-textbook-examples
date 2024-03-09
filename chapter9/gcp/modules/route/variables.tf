@@ -3,16 +3,16 @@
  *****************************************/
 variable "project_id" {
   type        = string
-  description = "The ID of the project where the routes will be created"
+  description = "ルーティングを設定するプロジェクトのIDを指定します"
 }
 
 variable "vpc_name" {
   type        = string
-  description = "The name of the network where routes will be created"
+  description = "ルーティングを設定するVPCの名称を指定します"
 }
 
 variable "routes" {
   type        = list(map(string))
-  description = "List of routes being created in this VPC"
+  description = "VPCに設定するルーティングをリストで指定します"
   default     = []
 }

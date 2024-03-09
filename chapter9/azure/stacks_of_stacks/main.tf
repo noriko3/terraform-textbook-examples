@@ -13,7 +13,6 @@ module "azure_stacks" {
   storage_account_name     = var.storage_account_name
   account_kind             = var.account_kind
   skuname                  = var.skuname
-  allow_blob_public_access = var.allow_blob_public_access
   soft_delete_retention    = var.soft_delete_retention
   containers_list          = var.containers_list
 }

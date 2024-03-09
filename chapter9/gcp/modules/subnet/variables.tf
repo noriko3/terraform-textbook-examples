@@ -3,21 +3,21 @@
  *****************************************/
 variable "project_id" {
   type        = string
-  description = "The ID of the project where subnets will be created"
+  description = "プロジェクトIDを指定します"
 }
 
 variable "vpc_name" {
   type        = string
-  description = "The name of the network where subnets will be created"
+  description = "サブネットを作成するVPCの名称を指定します"
 }
 
 variable "subnets" {
   type        = list(map(string))
-  description = "The list of subnets being created"
+  description = "作成するサブネットをリストで指定します"
 }
 
 variable "secondary_ranges" {
   type        = map(list(object({ range_name = string, ip_cidr_range = string })))
-  description = "Secondary ranges that will be used in some of the subnets"
+  description = "セカンダリIPの範囲を指定します"
   default     = {}
 }

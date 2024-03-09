@@ -3,12 +3,12 @@
  *****************************************/
 variable "project_id" {
   type        = string
-  description = "このVPCを作成するプロジェクトのID"
+  description = "このVPCを作成するプロジェクトのIDを指定します"
 }
 
 variable "vpc_name" {
   type        = string
-  description = "作成しようとしているネットワークの名称"
+  description = "作成しようとしているネットワークの名称を指定します"
 }
 
 variable "vpc_routing_mode" {
@@ -25,7 +25,10 @@ variable "vpc_description" {
 
 variable "auto_create_subnetworks" {
   type        = bool
-  description = "trueに設定すると、ネットワークは'auto subnet mode'で作成され、10.128.0.0/9のアドレス範囲に渡って各リージョンのサブネットを自動的に作成します。falseに設定すると、ネットワークは'カスタムサブネットモード'で作成され、ユーザーは明示的にサブネットワークのリソースを関連付けることができます。"
+  description = <<EOF
+  "trueに設定すると、ネットワークは'auto subnet mode'で作成され、10.128.0.0/9のアドレス範囲に渡って各リージョンのサブネットを自動的に作成します。
+  falseに設定すると、ネットワークは'カスタムサブネットモード'で作成され、ユーザーは明示的にサブネットワークのリソースを関連付けることができます。"
+  EOF
   default     = false
 }
 

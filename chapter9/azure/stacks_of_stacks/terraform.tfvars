@@ -5,11 +5,10 @@ tags = {
   Environment = "prod"
   Owner       = "Azure-Terraform"
 }
-storage_account_name     = "tf"
-skuname                  = "Standard_LRS"
-allow_blob_public_access = true
-soft_delete_retention    = 30
-account_kind             = "StorageV2"
+storage_account_name  = "tf"
+skuname               = "Standard_LRS"
+soft_delete_retention = 30
+account_kind          = "StorageV2"
 containers_list = [
   { name = "terraformcontainer1", access_type = "private" },
   { name = "terraformcontainer2", access_type = "blob" },

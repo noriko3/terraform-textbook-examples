@@ -3,8 +3,8 @@
  *****************************************/
 
 module "webapp" {
-  #source                = "github.com/PacktPublishing/Hashicorp-Infrastructure-Automation-Certification-Guide.git//chapter9/azure/modules/webapp?ref=v1.15"
-  source                = "../modules/webapp"
+  source = "github.com/noriko3/terraform-textbook-examples.git//chapter9/azure/modules/webapp?ref=v3.0.0"
+  #source                = "../modules/webapp"
   create_resource_group = var.create_resource_group
   resource_group_name   = var.resource_group_name
   location              = var.location
@@ -21,8 +21,8 @@ module "webapp" {
 	Storage Module Code
  *****************************************/
 module "storage" {
-  #source                   = "github.com/PacktPublishing/Hashicorp-Infrastructure-Automation-Certification-Guide.git//chapter9/azure/modules/storage?ref=v1.15"
-  source                = "../modules/storage"
+  source = "github.com/noriko3/terraform-textbook-examples.git//chapter9/azure/modules/storage?ref=v3.0.0"
+  #source                = "../modules/storage"
   create_resource_group = var.create_resource_group
   resource_group_name   = var.resource_group_name
   location              = var.location
@@ -30,7 +30,6 @@ module "storage" {
   account_kind          = var.account_kind
   skuname               = var.skuname
   tags                  = var.tags
-  #allow_blob_public_access = var.allow_blob_public_access
   soft_delete_retention = var.soft_delete_retention
   containers_list       = var.containers_list
 }
