@@ -11,11 +11,6 @@ variable "bucket_name" {
   type        = string
   description = "S3バケットの名称を指定します"
 }
-variable "bucket_acl" {
-  type        = string
-  description = "S3バケットのACLを指定します。例: `private`、`public-read`"
-  default     = "private"
-}
 
 variable "custom_tags" {
   type        = map(string)

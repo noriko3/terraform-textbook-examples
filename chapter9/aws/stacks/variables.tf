@@ -66,12 +66,6 @@ variable "bucket_name" {
   description = "S3バケットの名称を指定します"
 }
 
-variable "bucket_acl" {
-  type        = string
-  description = "S3バケットのACLを指定します。例: `private`、`public-read`"
-  default     = "private"
-}
-
 variable "force_destroy" {
   description = "バケットからすべてのオブジェクトを削除して、エラーなくバケットを削除できるようにするかどうかをbool値で指定します。デフォルトは`false`です。これらのオブジェクトは回復不可能です"
   type        = bool
