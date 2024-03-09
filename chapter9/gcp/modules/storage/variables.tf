@@ -3,26 +3,26 @@
  *****************************************/
 variable "stg_name" {
   type        = string
-  description = "name of the GCP storage"
+  description = "バケットの名称を指定します"
 }
 variable "location" {
   type        = string
-  description = "name of the location"
+  description = "ロケーションの名称を指定します"
 }
 variable "force_destroy" {
   type        = bool
-  description = "provide whether true or false"
+  description = "強制削除をするかしないかをbool値で指定します。デフォルトは `true` です"
   default     = true
 }
 variable "storage_class" {
   type        = string
-  description = "Provide Storage Class and Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE"
+  description = "ストレージクラスを以下の値から指定します: STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE"
 }
 variable "project_id" {
   type        = string
-  description = "provide project ID"
+  description = "プロジェクトIDを指定します"
 }
 variable "labels" {
   type        = map(any)
-  description = "provide name of the labels"
+  description = "ラベルの名称を指定します"
 }

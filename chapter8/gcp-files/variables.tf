@@ -1,49 +1,49 @@
 variable "gcp_location" {
   type        = string
-  description = "name of the location"
+  description = "ロケーションの名称を指定します"
 }
 variable "force_destroy" {
   type        = bool
-  description = "provide whether true or false"
+  description = "強制削除をするかしないかをbool値で指定します"
   default     = true
 }
 variable "storage_class" {
   type        = string
-  description = "Supported values include: MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE"
+  description = "ストレージクラスを以下の値から指定します: STANDARD, MULTI_REGIONAL, REGIONAL, NEARLINE, COLDLINE, ARCHIVE"
 }
 variable "project_id" {
   type        = string
-  description = "provide project ID"
+  description = "プロジェクトIDを指定します"
 }
 variable "project_name" {
   type        = string
-  description = "provide google project name"
+  description = "プロジェクト名を指定します"
 }
 variable "labels" {
   type        = map(any)
-  description = "provide name of the labels"
+  description = "ラベルの名称を指定します"
 }
 variable "gcp_region" {
   type        = string
-  description = "provide gcp region"
+  description = "リージョンの名称を指定します"
 }
 variable "zone" {
   type        = string
-  description = "provide gcp zone"
+  description = "ゾーンの名称を指定します"
 }
 variable "ip_cidr_range" {
   type        = string
-  description = "provide IP CIDR Range"
+  description = "CIDRを指定します"
 }
 variable "address" {
   type        = string
-  description = "provide static address with in the CIDR range"
+  description = "固定IPをCIDR付で指定します"
 }
 variable "address_type" {
   type        = string
-  description = "provide address type whether it is INTERNAL or EXTERNAL"
+  description = "IPアドレスのタイプを指定します。`INTERNAL` か `EXTERNAL`"
 }
 variable "routing_mode" {
   type        = string
-  description = "provide routing method GLOBAL or REGIONAL"
+  description = "ルーティングモードを指定します。`GLOBAL` か `REGIONAL`"
 }

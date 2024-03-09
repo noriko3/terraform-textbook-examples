@@ -3,53 +3,41 @@
  *****************************************/
 
 variable "vpc_name" {
-  description = "Define name of the VPC"
+  description = "VPCの名称を指定します"
   type        = string
   default     = ""
 }
 
 variable "cidr_block" {
-  description = "The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by AWS and should be overridden"
+  description = "VPCのCIDRブロックを指定します。デフォルト値は有効なCIDRになっていますがこの設定は受け入れてもらえませんので変更してください"
   type        = string
   default     = "0.0.0.0/0"
 }
 
 variable "custom_tags" {
-  description = "A map of tags to add to all resources"
+  description = "すべてのリソースに付与するタグをmap形式で指定します"
   type        = map(string)
   default     = {}
 }
 variable "enable_dns_hostnames" {
-  description = "Should be true to enable DNS hostnames in the VPC"
+  description = "VPC内のDNSホスト名を有効にするかどうかを指定します。デフォルト値は `false` です"
   type        = bool
   default     = false
 }
 
 variable "enable_dns_support" {
-  description = "Should be true to enable DNS support in the VPC"
+  description = "VPCでDNSサポートを有効にするかどうかを指定します。デフォルト値は `ture` です"
   type        = bool
   default     = true
 }
 
-variable "enable_classiclink" {
-  description = "Should be true to enable ClassicLink for the VPC. Only valid in regions and accounts that support EC2 Classic."
-  type        = bool
-  default     = null
-}
-
-variable "enable_classiclink_dns_support" {
-  description = "Should be true to enable ClassicLink DNS Support for the VPC. Only valid in regions and accounts that support EC2 Classic."
-  type        = bool
-  default     = null
-}
-
 variable "assign_generated_ipv6_cidr_block" {
-  description = "Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or the size of the CIDR block."
+  description = "VPC用にAmazonが提供する/56プレフィックス長のIPv6 CIDRブロックを使うかどうかを指定します。デフォルト値は `false` です"
   type        = bool
   default     = false
 }
 variable "instance_tenancy" {
-  description = "provide tenancy details"
+  description = "テナンシーの詳細を指定します"
   type        = string
 }
 /******************************************
@@ -57,10 +45,10 @@ variable "instance_tenancy" {
  *****************************************/
 variable "subnet_name" {
   type        = string
-  description = "Name of the subnet"
+  description = "サブネットの名称を指定します"
 }
 
 variable "subnet_cidr" {
   type        = string
-  description = "provide subnet range"
+  description = "サブネットの範囲を指定します"
 }

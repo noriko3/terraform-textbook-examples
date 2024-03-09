@@ -2,33 +2,28 @@
 	Storage Variables
  *****************************************/
 variable "create_bucket" {
-  description = "Controls if S3 bucket should be created"
+  description = "S3バケットを作成するかどうかを指定します"
   type        = bool
   default     = true
 }
 
 variable "bucket_name" {
   type        = string
-  description = "provide name of the S3 bucket"
-}
-variable "bucket_acl" {
-  type        = string
-  description = "provide ACL for the S3 bucket i.e. private, public-read etc."
-  default     = "private"
+  description = "S3バケットの名称を指定します"
 }
 
 variable "custom_tags" {
   type        = map(string)
-  description = "provide tags which needs to be applied."
+  description = "追加のタグが必要な場合は指定します"
 }
 variable "force_destroy" {
-  description = "(Optional, Default:false ) A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable."
+  description = "バケットからすべてのオブジェクトを削除して、エラーなくバケットを削除できるようにするかどうかをbool値で指定します。デフォルトは`false`です。これらのオブジェクトは回復不可能です"
   type        = bool
   default     = false
 }
 
 variable "acceleration_status" {
-  description = "(Optional) Sets the accelerate configuration of an existing bucket. Can be Enabled or Suspended."
+  description = "Transfer Accelerationを使うかを`Enabled` か `Suspended`で指定します。"
   type        = string
   default     = null
 }
