@@ -6,12 +6,12 @@ terraform {
       version = "~> 3.0"
     }
   }
-  backend "azurerm" {
-    storage_account_name = "terraformtest1729"
-    container_name       = "terraform"
-    key                  = "chapter9/terraform.tfstate"
-    access_key           = "KRqtJIA0Gp4oKBsElD.."
-  }
+  #backend "azurerm" {
+  #  storage_account_name = "terraformtest1729"
+  #  container_name       = "terraform"
+  #  key                  = "chapter9/terraform.tfstate"
+  #  access_key           = "KRqtJIA0Gp4oKBsElD.."
+  #}
 }
 provider "azurerm" {
   features {}
